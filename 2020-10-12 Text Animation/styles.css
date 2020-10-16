@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --curved-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+    --box-size: 600px;
+    --delay: 300ms;
+}
+
+body {
+    background-color: teal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Staatliches", sans-serif;
+    letter-spacing: 0.2em;
+}
+
+.title2,
+svg {
+    fill: transparent;
+    animation: fillAnimation .8s forwards 4s;
+}
+
+
+.title2 path,
+svg path {
+    stroke: transparent;
+    animation: strokeAnimation 3.5s forwards cubic-bezier(0, 0.59, 1, 0.39);
+    animation: strokeAnimation 3.5s forwards ease;
+
+}
+
+
+.title2 path:nth-child(2) {
+    animation-delay: calc(var(--delay) * 1);
+}
+
+.title2 path:nth-child(3) {
+    animation-delay: calc(var(--delay) * 2);
+}
+
+.title2 path:nth-child(4) {
+    animation-delay: calc(var(--delay) * 3);
+}
+
+.title2 path:nth-child(5) {
+    animation-delay: calc(var(--delay) * 4);
+}
+
+.title2 path:nth-child(6) {
+    animation-delay: calc(var(--delay) * 5);
+}
+
+.title2 path:nth-child(7) {
+    animation-delay: calc(var(--delay) * 6);
+}
+
+@keyframes strokeAnimation {
+    0% {
+        stroke: gold;
+        stroke-dasharray: 0 60%;
+        stroke-dashoffset: 10%;
+        stroke: transparent;
+    }
+
+    100% {
+        stroke-dasharray: 60% 0;
+        stroke-dashoffset: -10%;
+        stroke: gold;
+    }
+}
+
+
+@keyframes fillAnimation {
+    to {
+        fill: gold;
+    }
+}

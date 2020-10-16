@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --curved-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+    --box-size: 600px;
+    --delay: 300ms;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Staatliches", sans-serif;
+    letter-spacing: 0.2em;
+}
+
+.title2{
+    fill: transparent;
+    /* animation: fillAnimation .8s forwards 4s; */
+}
+
+
+.title2 path,
+svg path {
+    stroke: transparent;
+    animation: strokeAnimation2 3.5s forwards ease,
+    fillAnimation2 .8s forwards 4s;
+}
+
+
+.title2 path:nth-child(3),
+.title2 path:nth-child(4)
+{
+    animation: strokeAnimation 3.5s forwards ease,
+    fillAnimation .8s forwards 4s;
+}
+
+
+
+/* .title2 path:nth-child(2) {
+    animation-delay: calc(var(--delay) * 1);
+    stroke: pink;
+}
+
+.title2 path:nth-child(3) {
+    animation-delay: calc(var(--delay) * 2);
+}
+
+.title2 path:nth-child(4) {
+    animation-delay: calc(var(--delay) * 3);
+}
+
+.title2 path:nth-child(5) {
+    animation-delay: calc(var(--delay) * 4);
+}
+
+.title2 path:nth-child(6) {
+    animation-delay: calc(var(--delay) * 5);
+}
+
+.title2 path:nth-child(7) {
+    animation-delay: calc(var(--delay) * 6);
+} */
+
+@keyframes strokeAnimation {
+    0% {
+        stroke: #737371;
+        stroke-dasharray: 0 60%;
+        stroke-dashoffset: 10%;
+        stroke: transparent;
+    }
+
+    100% {
+        stroke-dasharray: 60% 0;
+        stroke-dashoffset: -10%;
+        stroke: #737371;
+    }
+}
+
+@keyframes strokeAnimation2 {
+    0% {
+        stroke: #DE8496;
+        stroke-dasharray: 0 60%;
+        stroke-dashoffset: 10%;
+        stroke: transparent;
+    }
+
+    100% {
+        stroke-dasharray: 60% 0;
+        stroke-dashoffset: -10%;
+        stroke: #DE8496;
+    }
+}
+
+
+@keyframes fillAnimation {
+    to {
+        fill: #737371;
+    }
+}
+
+@keyframes fillAnimation2 {
+    to {
+        fill: #DE8496;
+    }
+}

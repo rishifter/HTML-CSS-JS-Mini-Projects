@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+	--curved-shadow: 0 20px 10px rgba(0, 0, 0, 0.5);
+	--box-size: 600px;
+}
+
+body {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.frame {
+    width: var(--box-size);
+    height: var(--box-size);
+    position: relative;
+    background: teal;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.frame::before,
+.frame::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 1em;
+    bottom: 2.7em;
+    box-shadow: var(--curved-shadow);
+    z-index: -1;
+}
+
+.frame::before {
+	left: 0;
+    transform: rotate(-8deg);
+}
+
+.frame::after {
+    right: 0;
+    transform: rotate(8deg);
+}
+
+.frame--image {
+    width: var(--box-size);
+    height: var(--box-size);
+    border: 1em solid white;
+}
